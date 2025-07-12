@@ -1,3 +1,5 @@
+//use this to run my valorant lang code {syntax :: node run-val name.val}
+
 const fs = require('fs');
 const { runValorantEsolang } = require('./valorant-esolang.js');
 
