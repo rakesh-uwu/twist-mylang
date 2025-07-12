@@ -1,3 +1,5 @@
+// use this to run .val files directly into cli {node val-run.js abc.val}
+
 const fs = require('fs');
 const { runValorantEsolang } = require('./valorant-esolang.js');
 
