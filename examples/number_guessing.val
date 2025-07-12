@@ -1,0 +1,119 @@
+JETT DASH secret_number 42
+JETT DASH attempts 0
+JETT DASH max_attempts 10
+
+REYNA DEVOUR "Welcome to the Number Guessing Game!"
+REYNA DEVOUR "I'm thinking of a number between 1 and 100."
+
+
+SAGE WALL check_guess guess
+  JETT DASH attempts attempts RAZE_BOOM 1
+  
+  VIPER POISON guess SOVA_SHOCK secret_number THEN
+    REYNA DEVOUR "Your guess is too high!"
+    KILLJOY TURRET 0
+  ELSE
+    VIPER POISON guess SOVA_SHOCK secret_number THEN
+      REYNA DEVOUR "Your guess is too low!"
+      KILLJOY TURRET 0
+    ELSE
+      REYNA DEVOUR "Congratulations! You guessed the number in " SKYE_TRAILBLAZER attempts SKYE_TRAILBLAZER " attempts!"
+      KILLJOY TURRET 1
+    END
+  END
+SAGE HEAL
+
+REYNA DEVOUR "\nCreating an array of guesses..."
+HARBOR CASCADE guess_array 6
+HARBOR COVE guess_array 0 75
+HARBOR COVE guess_array 1 25
+HARBOR COVE guess_array 2 50
+HARBOR COVE guess_array 3 40
+HARBOR COVE guess_array 4 45
+HARBOR COVE guess_array 5 42
+
+
+HARBOR CASCADE feedback_array 6
+
+
+JETT DASH game_over 0
+JETT DASH guess_index 0
+
+REYNA DEVOUR "\nStarting the game with predefined guesses:\n"
+
+NEON SPRINT guess_array guess
+  VIPER POISON game_over THEN
+  ELSE
+    JETT DASH attempt_message "Attempt " 
+    JETT DASH attempt_message attempt_message SKYE_TRAILBLAZER attempts RAZE_BOOM 1
+    JETT DASH attempt_message attempt_message SKYE_TRAILBLAZER ": You guess "
+    JETT DASH attempt_message attempt_message SKYE_TRAILBLAZER guess
+    REYNA DEVOUR attempt_message
+    
+    PHOENIX FLASH check_guess guess
+    JETT DASH game_over result
+    
+    VIPER POISON result THEN
+      HARBOR COVE feedback_array guess_index "Correct!"
+    ELSE
+      VIPER POISON guess SOVA_SHOCK secret_number THEN
+        HARBOR COVE feedback_array guess_index "Too high"
+      ELSE
+        HARBOR COVE feedback_array guess_index "Too low"
+      END
+    END
+    
+    JETT DASH guess_index guess_index RAZE_BOOM 1
+    
+    VIPER POISON attempts RAZE_BOOM 1 SOVA_SHOCK max_attempts THEN
+      REYNA DEVOUR "You've used all your attempts. The number was " SKYE_TRAILBLAZER secret_number
+      JETT DASH game_over 1
+    ELSE
+    END
+  END
+END
+
+REYNA DEVOUR "\nGame Summary:"
+
+JETT DASH i 0
+NEON SPRINT guess_array guess
+  HARBOR WAVE feedback_array i feedback
+  JETT DASH summary "Guess: "
+  JETT DASH summary summary SKYE_TRAILBLAZER guess
+  JETT DASH summary summary SKYE_TRAILBLAZER " - "
+  JETT DASH summary summary SKYE_TRAILBLAZER feedback
+  
+  REYNA DEVOUR summary
+  JETT DASH i i RAZE_BOOM 1
+END
+
+JETT DASH sum 0
+NEON SPRINT guess_array guess
+  JETT DASH sum sum RAZE_BOOM guess
+END
+
+JETT DASH average sum ASTRA_DIVIDE 6
+REYNA DEVOUR "\nAverage guess value: " SKYE_TRAILBLAZER average
+
+REYNA DEVOUR "\nDistance from target for each guess:"
+
+HARBOR CASCADE distance_array 6
+
+JETT DASH i 0
+NEON SPRINT guess_array guess
+  VIPER POISON guess SOVA_SHOCK secret_number THEN
+    JETT DASH distance guess SOVA_SHOCK secret_number
+  ELSE
+    JETT DASH distance secret_number SOVA_SHOCK guess
+  END
+  
+  HARBOR COVE distance_array i distance
+  JETT DASH message "Guess "
+  JETT DASH message message SKYE_TRAILBLAZER guess
+  JETT DASH message message SKYE_TRAILBLAZER ": "
+  JETT DASH message message SKYE_TRAILBLAZER distance
+  JETT DASH message message SKYE_TRAILBLAZER " away from target"
+  REYNA DEVOUR message
+  
+  JETT DASH i i RAZE_BOOM 1
+END

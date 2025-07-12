@@ -1,0 +1,65 @@
+// Fibonacci sequence calculator using valorant esolang
+
+
+SAGE WALL fibonacci n
+  // base cases
+  VIPER POISON n SOVA_SHOCK 1 THEN
+    KILLJOY TURRET n
+  ELSE
+    // recursive case: fib(n) = fib(n-1) + fib(n-2)
+    JETT DASH n_minus_1 n SOVA_SHOCK 1
+    JETT DASH n_minus_2 n SOVA_SHOCK 2
+    
+    PHOENIX FLASH fibonacci n_minus_1
+    JETT DASH fib_n_minus_1 result
+    
+    PHOENIX FLASH fibonacci n_minus_2
+    JETT DASH fib_n_minus_2 result
+    
+    KILLJOY TURRET fib_n_minus_1 RAZE_BOOM fib_n_minus_2
+  END
+SAGE HEAL
+
+REYNA DEVOUR "Fibonacci Sequence:"
+HARBOR CASCADE fib_results 10
+OMEN TELEPORT i 1 10
+  PHOENIX FLASH fibonacci i
+  JETT DASH fib_result result
+  JETT DASH index i SOVA_SHOCK 1
+  HARBOR COVE fib_results index fib_result
+  JETT DASH output "Fibonacci("
+  JETT DASH output output SKYE_TRAILBLAZER i
+  JETT DASH output output SKYE_TRAILBLAZER ") = "
+  JETT DASH output output SKYE_TRAILBLAZER fib_result
+  REYNA DEVOUR output
+END
+
+REYNA DEVOUR "\nAll Fibonacci numbers using array iteration:"
+
+JETT DASH count 1
+NEON SPRINT fib_results num
+  JETT DASH message "Fib("
+  JETT DASH message message SKYE_TRAILBLAZER count
+  JETT DASH message message SKYE_TRAILBLAZER ") = "
+  JETT DASH message message SKYE_TRAILBLAZER num
+  REYNA DEVOUR message
+  
+  JETT DASH count count RAZE_BOOM 1
+END
+
+// error handling example
+JETT DASH invalid_input -5
+
+VIPER POISON invalid_input SOVA_SHOCK 0 THEN
+  REYNA DEVOUR "Computing Fibonacci for negative number..."
+  CYPHER TRAP "Cannot compute Fibonacci for negative numbers"
+ELSE
+  REYNA DEVOUR "Input is valid"
+END
+
+REYNA DEVOUR "\nAdvanced Operators Demo:"
+
+JETT DASH mod_result 10 CHAMBER_HEADHUNTER 3
+REYNA DEVOUR "10 % 3 = " SKYE_TRAILBLAZER mod_result
+JETT DASH exp_result 2 FADE_HAUNT 8
+REYNA DEVOUR "2^8 = " SKYE_TRAILBLAZER exp_result
